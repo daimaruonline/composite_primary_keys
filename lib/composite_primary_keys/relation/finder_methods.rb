@@ -114,7 +114,7 @@ module CompositePrimaryKeys
           records
         end.flatten
 
-        ids.length == 1 ? results.first : results
+        ids.flatten.length <= @klass.primary_keys.length ? results.first : results
       end
     end
   end
